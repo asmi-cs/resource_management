@@ -102,68 +102,9 @@ Higher score indicates a better match.
 
 ```bash
 pip install flask pandas numpy
+
 Run the Project
+
 Bash
 python app.py
 
-📂 Project Modules
-
-User Module
-Registration
-Login
-Role Management
-Resource Module
-Add Resources
-Update Resource Status
-View Available Resources
-Request Module
-Create Requests
-Set Urgency Level
-Track Requests
-Matching Engine
-Match donors and receivers
-Calculate matching score
-Suggest best donor
-
-🧪 Testing Scenarios
-
-No donor available
-Multiple donors available
-High urgency requests
-Expired resources
-Invalid requests
-📈 Future Enhancements
-GPS Integration
-AI-Based Recommendation System
-Mobile Application
-Notification System
-NGO Integration
-Real-Time Tracking
-
-🌍 Real-World Impact
-
-This project helps communities:
-Reduce food and resource wastage
-Improve emergency support
-Encourage local sharing networks
-Provide faster access to essential resources
-
-👨‍💻 Team Members
-
-Member 1 – Authentication & User Module
-Member 2 – Resource Management Module
-Member 3 – Request Management Module
-Member 4 – Matching Algorithm Module
-Member 5 – Frontend, Testing & Integration
-
-📚 Learning Outcomes
-
-Flask Web Development
-Database Management using SQLite
-Distributed Resource Sharing Concepts
-Matching Algorithm Design
-Team Collaboration using GitHub
-
-📄 License
-
-This project is developed for educational and academic purposes
