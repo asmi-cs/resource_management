@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h3>DRSN System</h3>
+
+    <div class="nav-links">
+        <a href="/dashboard">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="card">
+        <h2>Welcome {{ user }}</h2>
+        <p>Role: {{ role }}</p>
+    </div>
+
+    <!-- DONOR VIEW -->
+    {% if role == "Donor" %}
+    <div class="card">
+        <h3>Donor Panel</h3>
+        <a href="/add_resource"><button>Add Resource</button></a>
+    </div>
+    {% endif %}
+
+    <!-- RECEIVER VIEW -->
+    {% if role == "Receiver" %}
+    <div class="card">
+        <h3>Receiver Panel</h3>
+        <a href="/request_resource"><button>Request Resource</button></a>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

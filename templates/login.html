@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            body{
+             margin:0;
+             height:100vh;
+             
+             display:flex;
+             justify-content:center;
+             align-items:center;
+
+             font-family:arial,sans-serif;
+                
+            }
+            .container{
+            border:1px solid black;
+            padding:30px;
+            border-radius:10px;
+            }
+            label{
+              display:inline-block;
+              width:100px;
+
+            }
+            input{
+               width:200px;
+            }
+            button{
+              margin-left:100px;
+            }
+        </style>
+    </head>
+    <body>
+<form action="/login" method="POST">
+    <label>
+        Username:
+    </label>
+    <input type="text" name="username">
+    <br> <br>
+    <label>
+        Password:
+    </label>
+    <input type="password" name="password">
+    <br> <br>
+    <button type="submit">
+        Login
+    </button>
+    <br> <br>
+    </form>
+</body>
+</html>
