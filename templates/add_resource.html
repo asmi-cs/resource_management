@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Resource</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='add_resource.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">
+            <h2>Resource Registration</h2>
+            <p>Thanks for sharing your resources.Kindly consider below and fill.</p>
+            <ul>
+                <li>please donate only 1 item at a time.</li>
+                <li>In the <strong>Resource Name</strong> please specify what you're giving more clearly
+                so that receivers can understand.</li>
+                <ul>
+                    <li>If it is clothes say "a frock for 9 Years"</li>
+                    <li>If it is food say "5kg rice,2 curries"</li>
+                </ul>
+                <li><strong>Quantity: </strong>Enter numericals only like 1,2.
+                    If it is food you can enter how many people can eat just an estimation.</li>
+            </ul>
+        </div>
+
+        <form action="/submit_resource" method="POST">
+            <div class="form-group">
+                <label for="quantity">Resource name</label>
+            <input type="text" name="resource_name" placeholder="e.g.,2kg Rice bag" required>
+            </div>
+            <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Books">Books</option>
+                        <option value="Stationery">Stationery</option>
+                        <option value="Plants">Plants</option>
+                        <option value="games/sports related">games or sports related</option>
+                        <option value="Utensils">Utensils</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Plastic-items">plastic items</option>
+                        <option value="Steel-items">steel items</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1" required>
+                </div>
+
+                <div id="expiry-container" style="display:none;" class="form-group">
+                    <label for="expiry_date">Expiry Date</label>
+                    <input type="date" name="expiry_date" id="expiry_date">
+                </div>
+
+                <button type="submit" class="submit-btn">Add Resource</button>
+        </form>
+    </div>
+    <script>
+    document.getElementById("category").addEventListener("change", function() {
+
+        const expiryContainer = document.getElementById("expiry-container");
+
+        const categoriesWithExpiry = ["Food", "Medicine","Vehicles"];
+
+        if (categoriesWithExpiry.includes(this.value)) {
+            expiryContainer.style.display = "block";
+        } 
+        else {
+            expiryContainer.style.display = "none";
+            // Clear any previously selected date
+            document.getElementById("expiry_date").value = "";
+        }
+    });
+</script>
+</body>
+</html>
